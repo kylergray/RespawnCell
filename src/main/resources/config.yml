@@ -1,0 +1,13 @@
+messages:
+  prefix: '&cRespawnCell &8» '
+  default-message-color: '&7'
+  release-message: '{Player} has been released'
+  jail-message: '{Player} has been jailed'
+  jailed-message: 'You have been locked up for {Time} minutes!'
+  freed-message: 'You have been freed'
+  location-update-message: '{Location} location updated'
+  command-error: 'Command does not exist or invalid arguments'
+  no-permission: 'You do not have permission to do that'
+  bossbar-timer: '{Time} minutes remaining'
+
+

@@ -1,0 +1,13 @@
+name: RespawnCell
+version: ${project.version}
+main: com.kylergray.respawncell.respawncell.RespawnCell
+api-version: 1.16
+commands:
+  respawncell:
+    aliases:
+      - 'rc'
+      - 'clrespawn'
+      - 'clr'
+    description: main command for respawncell
+    usage: /<command>
+    permission: respawncell.admin
