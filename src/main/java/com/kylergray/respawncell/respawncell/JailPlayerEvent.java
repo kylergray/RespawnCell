@@ -12,10 +12,18 @@ public class JailPlayerEvent implements Listener {
 
     private final RespawnCellManager jailManager;
 
+    /**
+     * Creates a JailPlayerEvent manager that uses the given RespawnCellManager to manage jail
+     * @param jailManager the manager of the desired jail
+     */
     public JailPlayerEvent(RespawnCellManager jailManager) {
         this.jailManager = jailManager;
     }
 
+    /**
+     * Handles player death event, adding them to jail for the desired length of time
+     * @param event the event
+     */
     @EventHandler
     public void playerDeathEvent(PlayerDeathEvent event) {
         Player player = event.getEntity();
@@ -23,6 +31,11 @@ public class JailPlayerEvent implements Listener {
         jailManager.setPlayerJail(player.getPlayerListName(), 5 + additionalTime);
     }
 
+    /**
+     * Handles player join event, teleporting them to jail if necessary, refreshing their boss bar,
+     * and releasing them from prison if they need to be
+     * @param event the event
+     */
     @EventHandler
     public void playerJoinEvent(PlayerJoinEvent event) {
         Player player = event.getPlayer();
@@ -31,6 +44,10 @@ public class JailPlayerEvent implements Listener {
         jailManager.teleportToJail(player.getPlayerListName());
     }
 
+    /**
+     * Handles player respawn event, teleporting them to jail if necessary
+     * @param event the event
+     */
     @EventHandler
     public void playerRespawnEvent(PlayerRespawnEvent event) {
         event.setRespawnLocation(jailManager.getLocationFromConfig("respawn"));

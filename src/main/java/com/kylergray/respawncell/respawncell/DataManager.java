@@ -17,6 +17,12 @@ public class DataManager {
     private FileConfiguration pluginData;
     private File dataFile;
 
+    /**
+     * Creates a data manager to connect to configuration files for the given plugin and the given
+     * path to a configuration file
+     * @param plugin the plugin to connect the config manager to
+     * @param configPath the path to the config file to save to
+     */
     public DataManager(Plugin plugin, String configPath) {
         this.plugin = plugin;
         this.dataPath = configPath;
@@ -25,6 +31,9 @@ public class DataManager {
         saveDefaultConfig();
     }
 
+    /**
+     * Reloads the configuration file to reflect changes live
+     */
     public void reloadConfig() {
         if (dataFile == null) {
             dataFile = new File(plugin.getDataFolder(), dataPath);
@@ -37,6 +46,10 @@ public class DataManager {
         }
     }
 
+    /**
+     * Gets the config file located at the path the object is attached to
+     * @return the config file
+     */
     public FileConfiguration getConfig() {
         if (pluginData == null) {
             reloadConfig();
@@ -44,6 +57,9 @@ public class DataManager {
         return pluginData;
     }
 
+    /**
+     * Saves changes to the configuration file instance to the actual file
+     */
     public void saveConfig() {
         if (pluginData != null && dataFile != null) {
             try {
@@ -54,6 +70,9 @@ public class DataManager {
         }
     }
 
+    /**
+     * Saves the default values of the configuration file instance to the actual file
+     */
     public void saveDefaultConfig() {
         if (dataFile == null) {
             dataFile = new File(plugin.getDataFolder(), dataPath);

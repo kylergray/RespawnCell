@@ -12,6 +12,12 @@ public class RespawnCellCommand implements CommandExecutor {
     private final MessageManager message;
     private Plugin plugin;
 
+    /**
+     * Creates a command manager
+     * @param jailManager the manager of the jail
+     * @param message the message manager
+     * @param plugin the plugin to connect the command manager to
+     */
     public RespawnCellCommand(RespawnCellManager jailManager,
                               MessageManager message,
                               Plugin plugin) {
@@ -20,6 +26,14 @@ public class RespawnCellCommand implements CommandExecutor {
         this.plugin = plugin;
     }
 
+    /**
+     * Command manager for Respawn Cell
+     * @param sender the command sender
+     * @param command the command sent
+     * @param label the label for the command
+     * @param args the arguments associated with the command
+     * @return whether to echo the command
+     */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {

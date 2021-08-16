@@ -13,10 +13,22 @@ public class RespawnCellTabCompletor implements TabCompleter {
 
     private Server server;
 
+    /**
+     * Creates a RespawnCellTabCompletor for the given server
+     * @param server the server to initialize tab completion on
+     */
     public RespawnCellTabCompletor(Server server) {
         this.server = server;
     }
 
+    /**
+     * Implements tab completion for respawncell commands
+     * @param sender the sender of the command
+     * @param command the command to tab complete for
+     * @param alias alias commands for the command
+     * @param args the arguments currently passed into the command
+     * @return a List of Strings containing all phrases to auto-complete
+     */
     @Override
     public List<String> onTabComplete(CommandSender sender,
                                       Command command,
