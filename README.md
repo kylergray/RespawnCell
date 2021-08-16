@@ -12,4 +12,5 @@ A plugin to send players to a cell when they die and respawn
 #### Free Player from Jail (`/respawncell release <Player>`)
 - Releases the given Player (`<Player>`) from jail sending them to the specified rlease point.
 
-## Commands
+## Documentation
+[javadoc](docs.md)
