@@ -192,8 +192,8 @@ public class RespawnCellManager implements Runnable {
                 data.getConfig().getDouble("locations." + path + ".x"),
                 data.getConfig().getDouble("locations." + path + ".y"),
                 data.getConfig().getDouble("locations." + path + ".z"),
-                (float) data.getConfig().getDouble("locations." + path + ".pitch"),
-                (float) data.getConfig().getDouble("locations." + path + ".yaw"));
+                (float) data.getConfig().getDouble("locations." + path + ".yaw"),
+                (float) data.getConfig().getDouble("locations." + path + ".pitch"));
     }
 
     /**
